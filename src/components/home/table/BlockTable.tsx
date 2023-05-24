@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "@/styles/Table.module.css";
 import usePagedTable from "@/hooks/usePagedTable";
 import TableFooter from "../../common/TableFooter";
+import { useRouter } from "next/router";
 
 export default function BlockTable({
   data,
@@ -10,6 +11,7 @@ export default function BlockTable({
   data: any[];
   rowsPerPage: number;
 }) {
+  const router = useRouter();
   const [page, setPage] = useState(1);
   const { slice, range } = usePagedTable(data, page, rowsPerPage);
 
@@ -26,7 +28,12 @@ export default function BlockTable({
         </thead>
         <tbody>
           {slice?.map((elem: any) => (
-            <tr key={elem.level}>
+            <tr
+              key={elem.level}
+              onClick={() => {
+                router.push(`block/${elem.level}`);
+              }}
+            >
               <td>
                 <b>{elem.level}</b>
               </td>

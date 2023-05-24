@@ -45,11 +45,7 @@ button {
 }
 
 a {
-  color: var(--text-color);
-}
-
-a:hover {
-  color: gainsboro;
+  text-decoration: none;
 }
 
 /* Works on Firefox */
