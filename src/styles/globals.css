@@ -18,14 +18,10 @@
   --default-background-color: #2b2d32;
   --text-color: #4da7aa;
 
-  --card-background: #00000070;
-  --card-hover-background: #00000021;
-
-  --button-color: linear-gradient(97.42deg, #8ebaa4, #45bcbc 94.24%);
-  --button-hover-color: linear-gradient(194.84deg, #8ebaa4, #45bcbc 94.24%);
-  --buton-border: 12px;
-
-  --footer-svg-fill: white;
+  --table-dark-background: #212529;
+  --table-light-background: #2c3034;
+  --table-footer-color: #464646;
+  --table-hover-color: #4da7aa42;
 }
 
 * {

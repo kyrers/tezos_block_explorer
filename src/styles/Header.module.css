@@ -1,11 +1,13 @@
 .header {
   max-height: 150px;
+  padding: 2rem 0 0 0;
 }
 
 .headerText {
   text-align: center;
   font-family: Roboto Bold;
   color: var(--text-color);
+  font-size: xx-large;
 }
 
 @media (max-width: 793px) {

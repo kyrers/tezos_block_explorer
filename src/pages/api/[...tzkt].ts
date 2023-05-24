@@ -60,5 +60,5 @@ const getTransactionCount = async (blocks: Block[]) => {
     await fetch5(blocks.slice(i, i + 5));
   }
 
-  return data;
+  return data.sort((a, b) => (b.level ?? 0) - (a.level ?? 0));
 };

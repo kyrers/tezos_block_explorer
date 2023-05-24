@@ -1,15 +1,9 @@
 import { ReactNode } from "react";
 import { appTitle } from "@/utils/strings";
 import Head from "next/head";
-//import useIsMounted from "../hooks/useIsMounted";
+import Header from "./common/Header";
 
 export default function Layout({ children }: { children: ReactNode }) {
-  //const { mounted } = useIsMounted();
-
-  //if (!mounted) {
-  //  return <></>;
-  //}
-
   return (
     <>
       <Head>
@@ -18,7 +12,8 @@ export default function Layout({ children }: { children: ReactNode }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {children}
+      <Header />
+      <main>{children}</main>
     </>
   );
 }

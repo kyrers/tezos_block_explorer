@@ -1,0 +1,37 @@
+.tableFooter {
+  display: inherit;
+  justify-content: center;
+  overflow: auto;
+  padding: 0.5rem 0px;
+  width: 100%;
+  background-color: var(--table-footer-color);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.tableFooter button {
+  border: none;
+  padding: 7px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 5px;
+  color: white;
+}
+
+.tableFooter button:hover {
+  background-color: var(--table-hover-color);
+}
+
+.activeButton {
+  background-color: var(--table-dark-background);
+}
+
+.inactiveButton {
+  background-color: var(--table-light-background);
+}
+
+@media (max-width: 565px) {
+  .tableFooter {
+    justify-content: unset;
+  }
+}

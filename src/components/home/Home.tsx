@@ -1,13 +1,21 @@
 import styles from "@/styles/Home.module.css";
-import Header from "../common/Header";
 import useBlockData from "@/hooks/useBlockData";
+import BlockTable from "./table/BlockTable";
+import { errorText } from "@/utils/strings";
+import LoadingScreen from "../common/LoadingScreen";
 
 export default function Home() {
-  const { blockData, hasNoData, isDecoding, isError: errorLoadingNfts } = useBlockData();
+  const { data: blockData, error, isLoading } = useBlockData();
 
   return (
     <div className={styles.home}>
-      <Header />
+      {error ? (
+        <h2>{errorText}</h2>
+      ) : isLoading ? (
+        <LoadingScreen />
+      ) : (
+        <BlockTable key={"block_table"} data={blockData} rowsPerPage={10} />
+      )}
     </div>
   );
 }
