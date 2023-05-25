@@ -17,7 +17,6 @@ export default async function handler(
   res: NextApiResponse
 ) {
   try {
-    console.log("HERE")
     //First, we get the latest 100 blocks
     const blocks = await blocksGet({
       sort: {

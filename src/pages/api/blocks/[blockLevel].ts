@@ -12,14 +12,9 @@ export default async function handler(
   res: NextApiResponse
 ) {
   try {
-    const level = req.query.blockLevel?.toString() ?? "-1";
-    console.log("###LEVEL: ", level)
     const transactions = await operationsGetTransactions({
-      sort: {
-        desc: "timestamp",
-      },
       level: {
-        eq: Number.parseInt(level),
+        eq: Number.parseInt(req.query.blockLevel?.toString() ?? "-1"),
       },
       limit: 10000,
     });
