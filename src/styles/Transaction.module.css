@@ -6,6 +6,24 @@
   color: var(--text-color);
 }
 
+.returnButton {
+  align-self: baseline;
+}
+
+.returnButton button {
+  border: none;
+  padding: 7px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 5px;
+  color: white;
+  background-color: var(--table-dark-background);
+}
+
+.returnButton button:hover {
+  background-color: var(--table-hover-color);
+}
+
 @media (max-width: 700px) {
   .transactions {
     padding: 3rem;

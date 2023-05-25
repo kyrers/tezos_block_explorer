@@ -4,6 +4,7 @@ import LoadingScreen from "../common/LoadingScreen";
 import useTransactionData from "@/hooks/useTransactionData";
 import { useRouter } from "next/router";
 import TransactionTable from "./table/TransactionTable";
+import Link from "next/link";
 
 export default function Transactions() {
   const router = useRouter();
@@ -19,11 +20,16 @@ export default function Transactions() {
       ) : isLoading ? (
         <LoadingScreen />
       ) : (
-        <TransactionTable
-          key={"transactions_table"}
-          data={data}
-          rowsPerPage={10}
-        />
+        <>
+          <Link className={styles.returnButton} href={"/"}>
+            <button>Go back</button>
+          </Link>
+          <TransactionTable
+            key={"transactions_table"}
+            data={data}
+            rowsPerPage={10}
+          />
+        </>
       )}
     </div>
   );

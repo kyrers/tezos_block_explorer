@@ -48,7 +48,7 @@ const getTransactionCount = async (blocks: Block[]) => {
         data.push({
           level: block.level,
           proposer: block.proposer,
-          timestamp: block.timestamp,
+          timestamp: new Date(block?.timestamp ?? "").toUTCString(),
           transactionCount: txCount,
         });
       })
