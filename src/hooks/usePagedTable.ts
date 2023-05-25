@@ -9,11 +9,13 @@ export default function usePagedTable(
   const [slice, setSlice] = useState<any[]>();
 
   useEffect(() => {
-    const range = calculateRange(data, rowsPerPage);
-    setTableRange([...range]);
+    if (data) {
+      const range = calculateRange(data, rowsPerPage);
+      setTableRange([...range]);
 
-    const slice = sliceData(data, page, rowsPerPage);
-    setSlice([...slice]);
+      const slice = sliceData(data, page, rowsPerPage);
+      setSlice([...slice]);
+    }
   }, [data, setTableRange, page, setSlice]);
 
   return { slice, range: tableRange };
@@ -27,7 +29,7 @@ const calculateRange = (data: any[], rowsPerPage: number) => {
   for (let i = 1; i <= num; i++) {
     range.push(i);
   }
-  
+
   return range;
 };
 

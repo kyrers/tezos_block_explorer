@@ -5,7 +5,7 @@ import { errorText } from "@/utils/strings";
 import LoadingScreen from "../common/LoadingScreen";
 
 export default function Home() {
-  const { data: blockData, error, isLoading } = useBlockData();
+  const { data, error, isLoading } = useBlockData();
 
   return (
     <div className={styles.home}>
@@ -14,7 +14,7 @@ export default function Home() {
       ) : isLoading ? (
         <LoadingScreen />
       ) : (
-        <BlockTable key={"block_table"} data={blockData} rowsPerPage={10} />
+        <BlockTable key={"block_table"} data={data} rowsPerPage={10} />
       )}
     </div>
   );

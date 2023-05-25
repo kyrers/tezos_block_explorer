@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import styles from "@/styles/Table.module.css";
+import styles from "@/styles/BlockTable.module.css";
 import usePagedTable from "@/hooks/usePagedTable";
 import TableFooter from "../../common/TableFooter";
 import { useRouter } from "next/router";
+import { BlockData } from "@/model/BlockData";
 
 export default function BlockTable({
   data,
@@ -17,7 +18,7 @@ export default function BlockTable({
 
   return (
     <>
-      <table className={styles.table}>
+      <table className={styles.blockTable}>
         <thead>
           <tr>
             <th>Level</th>
@@ -27,7 +28,7 @@ export default function BlockTable({
           </tr>
         </thead>
         <tbody>
-          {slice?.map((elem: any) => (
+          {slice?.map((elem: BlockData) => (
             <tr
               key={elem.level}
               onClick={() => {
@@ -38,8 +39,8 @@ export default function BlockTable({
                 <b>{elem.level}</b>
               </td>
               <td>
-                <b>Alias:</b> {elem.proposer.alias} <br />
-                <b>Address:</b> {elem.proposer.address}
+                <b>Alias:</b> {elem.proposer?.alias} <br />
+                <b>Address:</b> {elem.proposer?.address}
               </td>
               <td>
                 <b>{elem.transactionCount}</b>

@@ -1,0 +1,19 @@
+.transactions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 6rem 3rem 6rem;
+  color: var(--text-color);
+}
+
+@media (max-width: 700px) {
+  .transactions {
+    padding: 3rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .transactions {
+    padding: 1rem;
+  }
+}

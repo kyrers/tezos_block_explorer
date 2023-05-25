@@ -1,0 +1,52 @@
+import React, { useState } from "react";
+import styles from "@/styles/TransactionTable.module.css";
+import usePagedTable from "@/hooks/usePagedTable";
+import TableFooter from "../../common/TableFooter";
+import { TransactionData } from "@/model/TransactionData";
+
+export default function TransactionTable({
+  data,
+  rowsPerPage,
+}: {
+  data: any[];
+  rowsPerPage: number;
+}) {
+  const [page, setPage] = useState(1);
+  const { slice, range } = usePagedTable(data, page, rowsPerPage);
+
+  return (
+    <>
+      <table className={styles.transactionTable}>
+        <thead>
+          <tr>
+            <th>Sender</th>
+            <th>Target</th>
+            <th>Amount (tez)</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {slice?.map((elem: TransactionData) => (
+            <tr key={elem.id}>
+              <td>
+                <b>Alias:</b> {elem.sender?.alias} <br />
+                <b>Address:</b> {elem.sender?.address}
+              </td>
+              <td>
+                <b>Alias:</b> {elem.target?.alias} <br />
+                <b>Address:</b> {elem.target?.address}
+              </td>
+              <td>
+                <b>{elem.amount}</b>
+              </td>
+              <td>
+                <b>{elem.status}</b>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <TableFooter range={range} slice={slice} setPage={setPage} page={page} />
+    </>
+  );
+}

@@ -1,26 +1,29 @@
-import styles from "@/styles/Home.module.css";
+import styles from "@/styles/Transaction.module.css";
 import { errorText } from "@/utils/strings";
 import LoadingScreen from "../common/LoadingScreen";
 import useTransactionData from "@/hooks/useTransactionData";
 import { useRouter } from "next/router";
+import TransactionTable from "./table/TransactionTable";
 
 export default function Transactions() {
   const router = useRouter();
   const { level } = router.query;
-  const {
-    data: transactionData,
-    error,
-    isLoading,
-  } = useTransactionData(Number.parseInt(level?.toString() ?? "-1"));
+  const { data, error, isLoading } = useTransactionData(
+    Number.parseInt(level?.toString() ?? "-1")
+  );
 
   return (
-    <div className={styles.home}>
+    <div className={styles.transactions}>
       {error ? (
         <h2>{errorText}</h2>
       ) : isLoading ? (
         <LoadingScreen />
       ) : (
-        /* <BlockTable key={"block_table"} data={blockData} rowsPerPage={10} />*/ "TO DO"
+        <TransactionTable
+          key={"transactions_table"}
+          data={data}
+          rowsPerPage={10}
+        />
       )}
     </div>
   );

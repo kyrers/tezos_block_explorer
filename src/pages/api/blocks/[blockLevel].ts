@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { operationsGetTransactions } from "@tzkt/sdk-api";
+import { TransactionData } from "@/model/TransactionData";
 
 /**
  * There are two important things to note regarding the tzkt api:
@@ -12,6 +13,8 @@ export default async function handler(
   res: NextApiResponse
 ) {
   try {
+    const data: TransactionData[] = [];
+
     const transactions = await operationsGetTransactions({
       level: {
         eq: Number.parseInt(req.query.blockLevel?.toString() ?? "-1"),
@@ -19,7 +22,17 @@ export default async function handler(
       limit: 10000,
     });
 
-    return res.status(200).json(transactions);
+    transactions.forEach((tx) => {
+      data.push({
+        id: tx.id,
+        sender: tx.sender,
+        target: tx.target,
+        amount: (tx.amount ?? 0) / 1000000, //convert from mutez to tez
+        status: tx.status,
+      });
+    });
+
+    return res.status(200).json(data);
   } catch (err) {
     return res.status(500).send(err);
   }

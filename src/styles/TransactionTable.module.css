@@ -1,18 +1,18 @@
-.table {
+.transactionTable {
   overflow: auto;
   border-collapse: collapse;
   border: none;
   width: 100%;
-  line-height: 2.5rem;
+  line-height: 2rem;
 }
 
-.table thead {
+.transactionTable thead {
   background-color: transparent;
   transition: all 0.25s ease;
   border-radius: 10px;
 }
 
-.table th {
+.transactionTable th {
   background-color: var(--table-dark-background);
   padding: 1rem;
   text-align: left;
@@ -21,55 +21,49 @@
   color: var(--text-color);
 }
 
-.table th:first-child {
+.transactionTable th:first-child {
   border-top-left-radius: 15px;
 }
 
-.table th:last-child {
+.transactionTable th:last-child {
   border-top-right-radius: 15px;
 }
 
-.table tr {
-  cursor: pointer;
+.transactionTable tbody tr {
   background-color: var(--table-dark-background);
 }
 
-.table tr:hover,
-.table tr:nth-child(odd):hover {
-  background-color: var(--table-hover-color);
-}
-
-.table tr:nth-child(odd) {
+.transactionTable tr:nth-child(odd) {
   background-color: var(--table-light-background);
 }
 
-.table td {
+.transactionTable td {
   padding: 1rem;
   color: white;
 }
 
 @media (max-width: 1200px) {
-  .table {
+  .transactionTable {
     display: block;
   }
 }
 
 @media (max-width: 1000px) {
-  .table thead {
+  .transactionTable thead {
     font-size: 14px;
   }
 
-  .table tbody {
+  .transactionTable tbody {
     font-size: 12px;
   }
 }
 
 @media (max-width: 800px) {
-  .table thead {
+  .transactionTable thead {
     font-size: 12px;
   }
 
-  .table tbody {
+  .transactionTable tbody {
     font-size: 10px;
   }
 }
