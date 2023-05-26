@@ -1,0 +1,68 @@
+[
+  {
+    "level": 1,
+    "proposer": { "alias": "Proposer 1", "address": "Address 1" },
+    "transactionCount": 10,
+    "timestamp": "2023-05-25T08:00:00Z"
+  },
+  {
+    "level": 2,
+    "proposer": { "alias": "Proposer 2", "address": "Address 2" },
+    "transactionCount": 15,
+    "timestamp": "2023-05-25T09:00:00Z"
+  },
+  {
+    "level": 3,
+    "proposer": { "alias": "Proposer 3", "address": "Address 3" },
+    "transactionCount": 20,
+    "timestamp": "2023-05-25T10:00:00Z"
+  },
+  {
+    "level": 4,
+    "proposer": { "alias": "Proposer 4", "address": "Address 4" },
+    "transactionCount": 25,
+    "timestamp": "2023-05-25T11:00:00Z"
+  },
+  {
+    "level": 5,
+    "proposer": { "alias": "Proposer 5", "address": "Address 5" },
+    "transactionCount": 30,
+    "timestamp": "2023-05-25T12:00:00Z"
+  },
+  {
+    "level": 6,
+    "proposer": { "alias": "Proposer 6", "address": "Address 6" },
+    "transactionCount": 35,
+    "timestamp": "2023-05-25T13:00:00Z"
+  },
+  {
+    "level": 7,
+    "proposer": { "alias": "Proposer 7", "address": "Address 7" },
+    "transactionCount": 40,
+    "timestamp": "2023-05-25T14:00:00Z"
+  },
+  {
+    "level": 8,
+    "proposer": { "alias": "Proposer 8", "address": "Address 8" },
+    "transactionCount": 45,
+    "timestamp": "2023-05-25T15:00:00Z"
+  },
+  {
+    "level": 9,
+    "proposer": { "alias": "Proposer 9", "address": "Address 9" },
+    "transactionCount": 50,
+    "timestamp": "2023-05-25T16:00:00Z"
+  },
+  {
+    "level": 10,
+    "proposer": { "alias": "Proposer 10", "address": "Address 10" },
+    "transactionCount": 55,
+    "timestamp": "2023-05-25T17:00:00Z"
+  },
+  {
+    "level": 11,
+    "proposer": { "alias": "Proposer 11", "address": "Address 11" },
+    "transactionCount": 60,
+    "timestamp": "2023-05-25T18:00:00Z"
+  }
+]

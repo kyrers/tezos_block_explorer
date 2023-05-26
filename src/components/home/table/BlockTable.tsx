@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "@/styles/BlockTable.module.css";
 import usePagedTable from "@/hooks/usePagedTable";
-import TableFooter from "../../common/TableFooter";
+import TableFooter from "../../common/table/TableFooter";
 import { useRouter } from "next/router";
 import { BlockData } from "@/model/BlockData";
 
@@ -18,9 +18,9 @@ export default function BlockTable({
 
   return (
     <>
-      <table className={styles.blockTable}>
+      <table className={styles.blockTable} data-cy="blocks-table">
         <thead>
-          <tr>
+          <tr data-cy="blocks-table-header-row">
             <th>Level</th>
             <th>Proposer</th>
             <th>Transactions</th>
@@ -31,6 +31,7 @@ export default function BlockTable({
           {slice?.map((elem: BlockData) => (
             <tr
               key={elem.level}
+              data-cy={`blocks-table-row-${elem.level}`}
               onClick={() => {
                 router.push(`block/${elem.level}`);
               }}

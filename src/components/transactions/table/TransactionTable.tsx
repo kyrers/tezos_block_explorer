@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "@/styles/TransactionTable.module.css";
 import usePagedTable from "@/hooks/usePagedTable";
-import TableFooter from "../../common/TableFooter";
+import TableFooter from "../../common/table/TableFooter";
 import { TransactionData } from "@/model/TransactionData";
 
 export default function TransactionTable({
@@ -16,9 +16,9 @@ export default function TransactionTable({
 
   return (
     <>
-      <table className={styles.transactionTable}>
+      <table className={styles.transactionTable} data-cy="transactions-table">
         <thead>
-          <tr>
+          <tr data-cy="transactions-table-header-row">
             <th>Sender</th>
             <th>Target</th>
             <th>Amount (tez)</th>
@@ -27,7 +27,7 @@ export default function TransactionTable({
         </thead>
         <tbody>
           {slice?.map((elem: TransactionData) => (
-            <tr key={elem.id}>
+            <tr key={elem.id} data-cy={`transactions-table-row-${elem.id}`}>
               <td>
                 <b>Alias:</b> {elem.sender?.alias} <br />
                 <b>Address:</b> {elem.sender?.address}

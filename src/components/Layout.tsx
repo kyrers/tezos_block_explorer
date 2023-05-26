@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { appTitle } from "@/utils/strings";
 import Head from "next/head";
-import Header from "./common/Header";
+import Header from "./common/header/Header";
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (

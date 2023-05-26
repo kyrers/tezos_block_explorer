@@ -19,10 +19,11 @@ export default function TableFooter({
   }, [slice, page, setPage]);
 
   return (
-    <div className={styles.tableFooter}>
+    <div className={styles.tableFooter} data-cy="table-footer">
       {range?.map((el, index) => (
         <button
           key={index}
+          data-cy={`page-button-${index}`}
           className={`${styles.button} ${
             page === el ? styles.activeButton : styles.inactiveButton
           }`}

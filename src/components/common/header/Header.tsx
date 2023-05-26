@@ -6,7 +6,9 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <Link href="/">
-        <h1 className={styles.headerText}>{appTitle}</h1>
+        <h1 className={styles.headerText} data-cy="app-title">
+          {appTitle}
+        </h1>
       </Link>
     </header>
   );
