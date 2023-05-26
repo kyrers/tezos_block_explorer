@@ -6,7 +6,7 @@ import MockNextRouter from "@/cypress/utils/mockNextRouter";
 describe("<BlockTable />", () => {
   beforeEach(() => {
     cy.mount(
-      <MockNextRouter asPath="/">
+      <MockNextRouter pathname="/">
         <BlockTable data={data} rowsPerPage={10} />
       </MockNextRouter>
     );

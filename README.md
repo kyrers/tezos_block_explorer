@@ -30,7 +30,15 @@ $ npm run dev
 
 ### Testing
 
-Testing was implemented using Cypress. Run them by using the command:
+Testing was implemented using Cypress. Run them by:
+
+1. Open one console and start the application
+
+```
+$ npm run dev
+```
+
+2. Open another console and run
 
 ```
 $ npm run test

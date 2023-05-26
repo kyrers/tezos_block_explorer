@@ -15,6 +15,15 @@
 
 import "./commands";
 import { mount } from "cypress/react18";
+import "@/styles/globals.css";
+import "@/styles/Home.module.css";
+import "@/styles/Header.module.css";
+import "@/styles/BlockTable.module.css";
+import "@/styles/LoadingScreen.module.css";
+import "@/styles/TableFooter.module.css";
+import "@/styles/Transaction.module.css";
+import "@/styles/TransactionTable.module.css";
+
 
 // Augment the Cypress namespace to include type definitions for
 // your custom command.
